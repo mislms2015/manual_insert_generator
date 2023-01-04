@@ -1,0 +1,9 @@
+,
+"min": "9282130970",
+"brand_id": "BUDDY",
+"brand_name": "Smart Prepaid",
+"brand_description": "Smart Prepaid",
+"is_active": true,
+"creation_timestamp": 1672848000,
+"last_update_timestamp": 1672848000
+

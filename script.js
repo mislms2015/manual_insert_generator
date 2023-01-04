@@ -137,11 +137,13 @@ function ctrlc() {
 }
 
 const copyContent = async () => {
+    var formatted = document.getElementById("format").innerText;
     try {
-        var formatted = document.getElementById("format").innerText;
+        
         await navigator.clipboard.writeText(formatted);
         console.log('Content copied to clipboard');
     } catch (err) {
-        console.error('Failed to copy: ', err);
+        //console.error('Failed to copy: ', err);
+        document.execCommand(formatted);
     }
   }
