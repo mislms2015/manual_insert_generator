@@ -121,6 +121,7 @@ function saveData(min, brand_id, brand_name, brand_description) {
 function ctrlc() {
     var formatted = document.getElementById("format").innerText;
     navigator.clipboard.writeText(formatted);
+    copyContent();
 
     $.ajax({
         method: "POST",
@@ -132,5 +133,15 @@ function ctrlc() {
     //   });
 
     $("#copied").show();
-    setTimeout(function() { $("#copied").hide(); }, 5000);
+    setTimeout(function() { $("#copied").hide(); }, 3000);
 }
+
+const copyContent = async () => {
+    try {
+        var formatted = document.getElementById("format").innerText;
+        await navigator.clipboard.writeText(formatted);
+        console.log('Content copied to clipboard');
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+    }
+  }
